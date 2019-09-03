@@ -1,4 +1,4 @@
-package br.com.marcussouza.easyinvest.presentation.base
+package br.com.marcussouza.easyinvest.feature.base
 
 import android.os.Bundle
 import android.view.MenuItem

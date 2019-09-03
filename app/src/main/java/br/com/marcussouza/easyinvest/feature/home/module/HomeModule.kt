@@ -1,9 +1,9 @@
-package br.com.marcussouza.easyinvest.presentation.home.module
+package br.com.marcussouza.easyinvest.feature.home.module
 
 import br.com.marcussouza.easyinvest.data.repository.SimulateRepositoryImpl
 import br.com.marcussouza.easyinvest.domain.repository.SimulateRepository
 import br.com.marcussouza.easyinvest.domain.usecase.SimulateUseCase
-import br.com.marcussouza.easyinvest.presentation.home.viewmodel.HomeViewModel
+import br.com.marcussouza.easyinvest.feature.home.viewmodel.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.dsl.module
