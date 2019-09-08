@@ -3,10 +3,9 @@ package br.com.marcussouza.easyinvest.feature.base
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.LifecycleOwner
 import br.com.marcussouza.easyinvest.R
 
-open class BaseActivity : AppCompatActivity(), LifecycleOwner {
+open class BaseActivity : AppCompatActivity() {
 
     private var onStartCount = 1
 

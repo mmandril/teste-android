@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">EasyInvestTes</string>
+
+    <string name="application_value_title">Quanto você gostaria de aplicar? *</string>
+    <string name="application_value_placeholder">R$</string>
+    <string name="application_value">R$ %1$s</string>
+
+    <string name="application_date_title">Qual a data de vencimento do investimento? *</string>
+    <string name="application_date_placeholder">dia/mês/ano</string>
+
+    <string name="application_cdi_title">Qual o percentual do CDI do investimento? *</string>
+    <string name="application_cdi_placeholder">100%</string>
+
+    <string name="simulate_btn">Simular</string>
 </resources>

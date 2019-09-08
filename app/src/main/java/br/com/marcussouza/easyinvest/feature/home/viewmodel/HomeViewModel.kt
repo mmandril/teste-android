@@ -1,8 +1,54 @@
 package br.com.marcussouza.easyinvest.feature.home.viewmodel
 
-import br.com.marcussouza.easyinvest.domain.usecase.SimulateUseCase
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import br.com.marcussouza.easyinvest.feature.base.BaseViewModel
+import br.com.marcussouza.easyinvest.feature.home.state.HomeState
 
-class HomeViewModel(private val simulateUseCase: SimulateUseCase) : BaseViewModel() {
+class HomeViewModel : BaseViewModel() {
 
+    private val _homeState = MutableLiveData<HomeState>()
+    val homeState: LiveData<HomeState>
+        get() = _homeState
+
+
+    fun validateForm(
+        investedAmount: String?,
+        index: String?,
+        rate: String?,
+        isTaxFree: Boolean = false,
+        maturityDate: String?
+    ) {
+
+        if (investedAmount.isNullOrEmpty() || index.isNullOrEmpty() || rate.isNullOrEmpty() || maturityDate.isNullOrEmpty()) {
+            _homeState.postValue(HomeState.NotValidForm)
+        } else {
+            _homeState.postValue(HomeState.ValidForm)
+        }
+    }
+
+    /*fun simulate(
+        investedAmount: Float,
+        index: String,
+        rate: Int,
+        isTaxFree: Boolean,
+        maturityDate: Date
+    ) {
+        _homeState.postValue(HomeState.ShowLoadind)
+        disposables.add(
+            simulateUseCase
+                .simulate(
+                    investedAmount,
+                    index,
+                    rate,
+                    isTaxFree,
+                    maturityDate
+                )
+                .subscribe({
+
+                }, {
+
+                })
+        )
+    }*/
 }

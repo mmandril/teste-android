@@ -7,5 +7,16 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    
+    <style name="TextView.Application.Title" parent="AppTheme">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/xanadu</item>
+        <item name="android:gravity">center</item>
+    </style>
 
+    <style name="TextView.Application.Value" parent="AppTheme">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/xanadu</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>

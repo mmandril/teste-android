@@ -1,6 +1,6 @@
 package br.com.marcussouza.easyinvest.feature.home.state
 
-import br.com.marcussouza.easyinvest.feature.base.BaseState
-
-class HomeState : BaseState() {
+open class HomeState {
+    object NotValidForm : HomeState()
+    object ValidForm : HomeState()
 }

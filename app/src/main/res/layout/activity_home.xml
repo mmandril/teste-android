@@ -1,7 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.core.widget.NestedScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/activityHomeValueTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/TextView.Application.Title"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/application_value_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/activityHomeValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/TextView.Application.Value"
+                android:layout_marginTop="26dp"
+                android:hint="@string/application_value_placeholder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/activityHomeValueTitle"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/activityHomeDateTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/TextView.Application.Title"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/activityHomeValue"
+                android:text="@string/application_date_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/activityHomeDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/TextView.Application.Value"
+                android:layout_marginTop="26dp"
+                android:hint="@string/application_date_placeholder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/activityHomeDateTitle"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/activityHomeCdiTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/TextView.Application.Title"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/activityHomeDate"
+                android:text="@string/application_cdi_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/activityHomeCdi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/TextView.Application.Value"
+                android:layout_marginTop="26dp"
+                android:hint="@string/application_cdi_placeholder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/activityHomeCdiTitle"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/activityHomeSimulateBtn"
+                android:layout_width="0dp"
+                android:text="@string/simulate_btn"
+                android:layout_marginTop="16dp"
+                android:enabled="false"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/activityHomeCdi"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
