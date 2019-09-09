@@ -5,5 +5,5 @@ import io.reactivex.Flowable
 
 interface SimulateRepository {
 
-    fun simulate(map: Map<String, String>): Flowable<SimulateResult>
+    fun simulate(map: Map<String, String?>): Flowable<SimulateResult>
 }

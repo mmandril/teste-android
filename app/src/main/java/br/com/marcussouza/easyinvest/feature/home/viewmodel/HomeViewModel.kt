@@ -26,29 +26,4 @@ class HomeViewModel : BaseViewModel() {
             _homeState.postValue(HomeState.ValidForm)
         }
     }
-
-    /*fun simulate(
-        investedAmount: Float,
-        index: String,
-        rate: Int,
-        isTaxFree: Boolean,
-        maturityDate: Date
-    ) {
-        _homeState.postValue(HomeState.ShowLoadind)
-        disposables.add(
-            simulateUseCase
-                .simulate(
-                    investedAmount,
-                    index,
-                    rate,
-                    isTaxFree,
-                    maturityDate
-                )
-                .subscribe({
-
-                }, {
-
-                })
-        )
-    }*/
 }

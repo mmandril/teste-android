@@ -9,7 +9,7 @@ import io.reactivex.schedulers.Schedulers
 
 class SimulateRepositoryImpl(private val api: Api) : SimulateRepository {
 
-    override fun simulate(map: Map<String, String>): Flowable<SimulateResult> {
+    override fun simulate(map: Map<String, String?>): Flowable<SimulateResult> {
         return api
             .simulate(map)
             .observeOn(Schedulers.io())

@@ -12,4 +12,20 @@
     <string name="application_cdi_placeholder">100%</string>
 
     <string name="simulate_btn">Simular</string>
+    <string name="simulate_again_btn">Simular novamente</string>
+
+    <string name="simulate_result_title">Resultado da simulação</string>
+    <string name="simulate_result_subtitle">Rendimento total de R$ %1$s</string>
+    <string name="initial_value">Valor aplicado inicialmente</string>
+    <string name="gross_value">Valor bruto do investimento</string>
+    <string name="yield_value">Valor do investimento</string>
+    <string name="yield_ir">IR sobre o investimento</string>
+    <string name="net_value">Valor líquido do investimento</string>
+    
+    <string name="redemption_date">Data de resgate</string>
+    <string name="total_days">Dias corridos</string>
+    <string name="monthly_income">Rendimento mensal</string>
+    <string name="cdi_net_percent">Percentual do CDI do investimento</string>
+    <string name="annual_profitability">Rentabilidade anual</string>
+    <string name="period_profitability">Rentabilidade no período</string>
 </resources>

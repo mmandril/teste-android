@@ -3,34 +3,32 @@ package br.com.marcussouza.easyinvest.domain.usecase
 import br.com.marcussouza.easyinvest.data.model.SimulateResult
 import br.com.marcussouza.easyinvest.domain.repository.SimulateRepository
 import io.reactivex.Flowable
-import java.util.*
-import kotlin.collections.HashMap
 
 class SimulateUseCase(private val simulateRepository: SimulateRepository) {
 
     fun simulate(
-        investedAmount: Float,
-        index: String,
-        rate: Int,
+        investedAmount: String?,
+        index: String?,
+        rate: String?,
         isTaxFree: Boolean,
-        maturityDate: Date
+        maturityDate: String?
     ): Flowable<SimulateResult> {
         return simulateRepository.simulate(getMap(investedAmount, index, rate, isTaxFree, maturityDate))
     }
 
     private fun getMap(
-        investedAmount: Float,
-        index: String,
-        rate: Int,
+        investedAmount: String?,
+        index: String?,
+        rate: String?,
         isTaxFree: Boolean,
-        maturityDate: Date
-    ): Map<String, String> {
-        val data = HashMap<String, String>()
-        data["investedAmount"] = investedAmount.toString()
+        maturityDate: String?
+    ): Map<String, String?> {
+        val data = HashMap<String, String?>()
+        data["investedAmount"] = investedAmount
         data["index"] = index
-        data["rate"] = rate.toString()
+        data["rate"] = rate
         data["isTaxFree"] = isTaxFree.toString()
-        data["maturityDate"] = maturityDate.toString()
+        data["maturityDate"] = maturityDate
         return data
     }
 }

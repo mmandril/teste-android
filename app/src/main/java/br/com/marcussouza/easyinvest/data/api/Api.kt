@@ -8,5 +8,5 @@ import retrofit2.http.QueryMap
 interface Api {
 
     @GET("/calculator/simulate")
-    fun simulate(@QueryMap arguments: Map<String, String>): Flowable<SimulateResult>
+    fun simulate(@QueryMap arguments: Map<String, String?>): Flowable<SimulateResult>
 }
