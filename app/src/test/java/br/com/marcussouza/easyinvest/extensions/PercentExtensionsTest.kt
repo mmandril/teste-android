@@ -1,8 +1,6 @@
 package br.com.marcussouza.easyinvest.extensions
 
-import org.hamcrest.CoreMatchers
 import org.hamcrest.CoreMatchers.equalTo
-import org.hamcrest.MatcherAssert
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Test
 
