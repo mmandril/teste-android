@@ -14,5 +14,5 @@ internal val simulateModule = module {
     viewModel { SimulateViewModel(get()) }
 }
 
-internal val provideSimulateModule = loadKoinModules(simulateModule)
+internal val provideSimulateModule by lazy { loadKoinModules(simulateModule) }
 fun loadSimulateModule() = provideSimulateModule

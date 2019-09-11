@@ -9,5 +9,5 @@ internal val homeModule = module {
     viewModel { HomeViewModel() }
 }
 
-internal val provideHomeModule = loadKoinModules(homeModule)
+internal val provideHomeModule by lazy { loadKoinModules(homeModule) }
 fun loadHomeModule() = provideHomeModule
