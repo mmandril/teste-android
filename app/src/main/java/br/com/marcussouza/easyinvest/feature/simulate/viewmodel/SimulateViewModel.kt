@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import br.com.marcussouza.easyinvest.domain.usecase.SimulateUseCase
 import br.com.marcussouza.easyinvest.feature.base.BaseViewModel
 import br.com.marcussouza.easyinvest.feature.simulate.state.SimulateState
+import java.io.IOException
 
 class SimulateViewModel(private val simulateUseCase: SimulateUseCase) : BaseViewModel() {
 
@@ -31,10 +32,20 @@ class SimulateViewModel(private val simulateUseCase: SimulateUseCase) : BaseView
                     maturityDate
                 )
                 .subscribe({
-
+                    _simulateState.postValue(SimulateState.HideLoading)
+                    _simulateState.postValue(SimulateState.ShowSimulateSucces(it))
                 }, {
-
+                    _simulateState.postValue(SimulateState.HideLoading)
+                    validateError(it)
                 })
         )
+    }
+
+    private fun validateError(throwable: Throwable) {
+        if (throwable is IOException) {
+            _simulateState.postValue(SimulateState.ShowNoInternt)
+        } else {
+            _simulateState.postValue(SimulateState.ShowError)
+        }
     }
 }

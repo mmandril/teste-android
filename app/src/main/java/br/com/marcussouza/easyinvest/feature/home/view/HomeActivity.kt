@@ -36,6 +36,8 @@ class HomeActivity : BaseActivity(), TextWatcher {
         }
 
         activityHomeValue.addTextChangedListener(this)
+        activityHomeDate.addTextChangedListener(this)
+        activityHomeCdi.addTextChangedListener(this)
     }
 
     private fun initObservers() {

@@ -1,6 +1,7 @@
 package br.com.marcussouza.easyinvest.feature.simulate.view
 
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.Observer
 import br.com.marcussouza.easyinvest.R
 import br.com.marcussouza.easyinvest.data.model.SimulateResult
@@ -8,6 +9,7 @@ import br.com.marcussouza.easyinvest.feature.base.BaseActivity
 import br.com.marcussouza.easyinvest.feature.simulate.module.loadSimulateModule
 import br.com.marcussouza.easyinvest.feature.simulate.state.SimulateState
 import br.com.marcussouza.easyinvest.feature.simulate.viewmodel.SimulateViewModel
+import kotlinx.android.synthetic.main.activity_simulate.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SimulateActivity : BaseActivity() {
@@ -46,16 +48,16 @@ class SimulateActivity : BaseActivity() {
                 is SimulateState.ShowNoInternt -> showNoInternet()
                 is SimulateState.ShowSimulateSucces -> showSimulateSuccess(state.simulateResult)
             }
-
         })
     }
 
     private fun showLoading() {
-
+        simulateActivityProgress.visibility = View.VISIBLE
+        simulateScrollView.visibility = View.GONE
     }
 
     private fun hideLoading() {
-
+        simulateActivityProgress.visibility = View.GONE
     }
 
     private fun showError() {
@@ -67,7 +69,20 @@ class SimulateActivity : BaseActivity() {
     }
 
     private fun showSimulateSuccess(simulateResult: SimulateResult) {
-
+        simulateScrollView.visibility = View.VISIBLE
+        simulateActivityResult.text = simulateResult.grossAmount.toString()
+        simulateActivityYieldDescription.text = getString(R.string.simulate_result_subtitle, simulateResult.grossAmountProfit.toString())
+        simulateActivityApplied.text = simulateResult.investmentParameter.investedAmount.toString()
+        simulateActivityGrossValue.text = simulateResult.grossAmount.toString()
+        simulateActivityYieldValue.text = simulateResult.grossAmountProfit.toString()
+        simulateActivityYieldIrValue.text = getString(R.string.ir_invested_value, simulateResult.taxesAmount.toString(), simulateResult.taxesRate.toString())
+        simulateActivityNetValue.text = simulateResult.netAmount.toString()
+        simulateActivityRedemptionDateValue.text = simulateResult.investmentParameter.maturityDate
+        simulateActivityTotalDay.text = simulateResult.investmentParameter.maturityTotalDays.toString()
+        simulateActivityMonthlyIncome.text = simulateResult.monthlyGrossRateProfit.toString()
+        simulateActivityCdi.text = simulateResult.investmentParameter.rate.toString()
+        simulateActivityAnnual.text = simulateResult.annualNetRateProfit.toString()
+        simulateActivityPeriod.text = simulateResult.rateProfit.toString()
     }
 
     companion object {

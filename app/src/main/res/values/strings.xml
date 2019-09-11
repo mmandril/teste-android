@@ -18,7 +18,7 @@
     <string name="simulate_result_subtitle">Rendimento total de R$ %1$s</string>
     <string name="initial_value">Valor aplicado inicialmente</string>
     <string name="gross_value">Valor bruto do investimento</string>
-    <string name="yield_value">Valor do investimento</string>
+    <string name="yield_value">Valor do rendimento</string>
     <string name="yield_ir">IR sobre o investimento</string>
     <string name="net_value">Valor líquido do investimento</string>
     
@@ -28,4 +28,6 @@
     <string name="cdi_net_percent">Percentual do CDI do investimento</string>
     <string name="annual_profitability">Rentabilidade anual</string>
     <string name="period_profitability">Rentabilidade no período</string>
+
+    <string name="ir_invested_value">%1$s(%2$s)</string>
 </resources>
