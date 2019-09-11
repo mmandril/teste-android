@@ -267,7 +267,6 @@
                     android:layout_width="0dp"
                     android:text="@string/simulate_again_btn"
                     android:layout_marginTop="16dp"
-                    android:enabled="false"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@+id/simulateActivityPeriod"
                     app:layout_constraintStart_toStartOf="parent"

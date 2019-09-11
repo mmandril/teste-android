@@ -32,14 +32,16 @@ class SimulateActivity : BaseActivity() {
 
     private fun init() {
         loadSimulateModule()
-        investedAmount = intent.getStringExtra(INVESTEDAMOUT)
-        index = intent.getStringExtra(INDEX)
-        rate = intent.getStringExtra(RATE)
-        isTaxFree = intent.getBooleanExtra(ISTAXFREE, false)
-        maturityDate = intent.getStringExtra(MATURITYDATE)
-
+        initListeners()
         initObservers()
+        loadValues()
         simulateViewModel.simulate(investedAmount, index, rate, isTaxFree, maturityDate)
+    }
+
+    private fun initListeners() {
+        activitySimulateBtn.setOnClickListener {
+            finish()
+        }
     }
 
     private fun initObservers() {
@@ -52,6 +54,14 @@ class SimulateActivity : BaseActivity() {
                 is SimulateState.ShowSimulateSucces -> showSimulateSuccess(state.simulateResult)
             }
         })
+    }
+
+    private fun loadValues() {
+        investedAmount = intent.getStringExtra(INVESTEDAMOUT)
+        index = intent.getStringExtra(INDEX)
+        rate = intent.getStringExtra(RATE)
+        isTaxFree = intent.getBooleanExtra(ISTAXFREE, false)
+        maturityDate = intent.getStringExtra(MATURITYDATE)
     }
 
     private fun showLoading() {
